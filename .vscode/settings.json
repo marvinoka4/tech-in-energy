@@ -1,0 +1,11 @@
+{
+    "folders": [
+        {
+         "path": "."
+        }
+       ],
+       "settings": {
+        "python.terminal.activateEnvInCurrentTerminal": true,
+        "python.defaultInterpreterPath": "/Users/Marvin/Documents/_Work/_Vintersect/Portfolio/tech-in-energy/server/venv/scripts/activate"
+       }
+}
