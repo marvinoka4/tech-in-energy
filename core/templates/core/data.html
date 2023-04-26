@@ -1,0 +1,61 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %} Data {% endblock %}
+
+{% block content %}
+
+        <div class="grid-container full bg-soft-secondary">
+            <div class="grid-x grid-padding-x align-center">
+
+                <div class="cell large-8 text-center padding-top-7 padding-bottom-10">
+                    <h2 class="h2-prime">Data</h2>
+                    <p class="color-dark-grey p-prime">Making Data of Electric Vehicles, the benefits of their usage and other related information easy to view, analyze and understand.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="grid-container bg-white">
+            <div class="grid-x grid-padding-x align-center">
+
+                <div class="cell large-8 medium-8 small-8">
+                    <div class="row gx-0 mb-16 mb-mb-20 relative img-state-page ">
+                        <div data-cues data-group="images" data-delay="100">
+{#                            {{ map|safe }}#}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x align-middle align-center">
+                <div class="image-wrapper bg-auto no-overlay bg-image text-center align-center bg-map" data-image-src="{% static 'assets/images/photos/map.png' %}" >
+                    <div class="grid-x grid-padding-x align-middle align-center">
+                        <div class="cell large-9 padding-horizontal-4 margin-vertical-5">
+                            <h3 class="margin-vertical-3">You can have access to data concerning EV in multiple cities in the UK using this platform.</h3>
+
+
+                            <div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons" data-delay="600">
+                                <a class="button primary margin-horizontal-1" href="#">About Us</a>
+                                <a class="button secondary margin-horizontal-1" href="#">EV Data</a>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+{% endblock %}

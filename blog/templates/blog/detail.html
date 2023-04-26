@@ -1,0 +1,139 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block content %}
+
+        <div class="grid-container full bg-soft-secondary">
+            <div class="grid-x grid-padding-x align-center">
+
+                <div class="cell large-8 text-center padding-vertical-7">
+                    <div class="post-header">
+                        <div class="post-category text-line">
+                         <a href="{% url 'category_detail' post.category.slug %}" class="hover" rel="category">{{ post.category }}</a>
+                        </div>
+                        <h1 class="h-prime">{{ post.title }}</h1>
+                          <ul class="post-meta mb-5">
+                            <li class="post-date"><i class="uil uil-calendar-alt"></i><span>{{ post.created_at|date:'M-d-Y' }}</span></li>
+                          </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="grid-container bg-white">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="cell large-9 medium-9 small-9 padding-vertical-3">
+                    <div class="row gx-0 mb-16 mb-mb-20 relative img-state-page classic-view">
+
+                      <article class="post">
+                        <div class="card">
+                          {% if post.image %}
+                              <figure class="card-img-top hover-scale">
+                                  <img class="img-fluid-page mx-auto" src="{{ post.image.url }}" alt="data-image-1">
+                              </figure>
+                          {% endif %}
+                          <div class="card-body">
+                            <div class="post-content padding-vertical-1">
+                              <p>{{ post.introduction }}</p>
+                              <p>{{ post.body }}</p>
+                                <blockquote class="p-prime my-8">
+                                  <p><strong>{{ post.excerpt }}</strong></p>
+                                </blockquote>
+                              <p>{{ post.conclusion }}</p>
+
+                                <hr class="padding-vertical-1" />
+{#                                {% if not post.comments.all %}#}
+{##}
+{#                                    <div class="post-content padding-vertical-2">#}
+{#                                      <h3>There are no comments yet... </h3>#}
+{#                                    </div>#}
+{##}
+{#                                {% else %}#}
+{##}
+{#                                  <div id="comments" class="padding-vertical-1">#}
+{#                                    <h3 class="mb-6">Comments...</h3>#}
+{#                                    <ol id="singlecomments" class="commentlist">#}
+{##}
+{#                                    {% for comment in post.comments.all %}#}
+{##}
+{#                                      <li class="comment">#}
+{#                                        <div class="comment-header d-md-flex align-items-center">#}
+{#                                          <div class="d-flex align-items-center">#}
+{#                                            <figure class="user-avatar"><img class="rounded-circle" alt="user-avatar" src="{% static 'assets/images/photos/avatar.png' %}" /></figure>#}
+{#                                            <div>#}
+{#                                              <h6 class="comment-author"><a class="link-dark">{{ comment.name }}</a></h6>#}
+{#                                              <ul class="post-meta">#}
+{#                                                <li><i class="uil uil-calendar-alt"></i>{{ comment.created_at|timesince }} ago</li>#}
+{#                                              </ul>#}
+{#                                              <!-- /.post-meta -->#}
+{#                                            </div>#}
+{#                                            <!-- /div -->#}
+{#                                          </div>#}
+{#                                          <!-- /div -->#}
+{#                                        </div>#}
+{#                                        <!-- /.comment-header -->#}
+{#                                        <p>{{ comment.body }}</p>#}
+{#                                      </li>#}
+{##}
+{#                                    {% endfor %}#}
+{##}
+{#                                    {% endif %}#}
+{##}
+{#                                    </ol>#}
+{#                                  </div>#}
+                                  <!-- /#comments -->
+{#                                  <hr class="padding-vertical-1" />#}
+{#                                  <h3 class="mb-3">Would you like to share your thoughts?</h3>#}
+{#                                  <p class="mb-7">Your email address will not be published. Required fields are marked *</p>#}
+{#                                  <form class="comment-form" method="post">#}
+{##}
+{#                                          {% csrf_token %}#}
+{##}
+{#                                          {{ form.as_p }}#}
+{##}
+{#                                    <button type="submit" class="button success margin-horizontal-1 mb-0">Submit</button>#}
+{#                                  </form>#}
+                                  <!-- /.comment-form -->
+                            </div>
+                            <!-- /.post-content -->
+                          </div>
+                          <!--/.card-body -->
+                        </div>
+                        <!-- /.card -->
+                      </article>
+                      <!-- /.post -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x align-middle align-center">
+                <div class="image-wrapper bg-auto no-overlay bg-image text-center align-center bg-map" data-image-src="{% static 'assets/images/photos/map.png' %}" >
+                    <div class="grid-x grid-padding-x align-middle align-center">
+                        <div class="cell large-9 padding-horizontal-4 margin-vertical-5">
+                            <h3 class="margin-vertical-3">You can have access to data concerning EV in multiple cities in the UK using this platform.</h3>
+
+                            <div class="d-flex justify-content-center">
+                                <a class="button primary margin-horizontal-1" href="#">About Us</a>
+                                <a class="button secondary margin-horizontal-1" href="#">EV Data</a>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+{% endblock %}

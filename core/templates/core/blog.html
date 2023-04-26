@@ -1,0 +1,93 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %} News {% endblock %}
+
+{% block content %}
+
+        <div class="grid-container full bg-soft-secondary">
+            <div class="grid-x grid-padding-x align-center">
+
+                <div class="cell large-8 text-center padding-vertical-7">
+                    <h1 class="h-prime">Local News</h1>
+                    <p class="color-dark-grey p-prime">Welcome to our journal. Here you can find the latest company news and business articles.</p>
+                </div>
+
+            </div>
+        </div>
+
+        {% for post in posts %}
+
+        <div class="grid-container bg-white">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="cell large-9 medium-9 small-9 padding-vertical-3">
+                    <div class="row gx-0 mb-16 mb-mb-20 relative img-state-page classic-view">
+
+                      <article class="post">
+                        <div class="card">
+                          {% if post.image %}
+                              <figure class="card-img-top overlay overlay-1 hover-scale"><a href="{% url 'post_detail' post.category.slug post.slug %}"><img class="img-fluid-page mx-auto" src="{{ post.image.url }}" alt="data-image-1"></a>
+                                <figcaption>
+                                  <h5 class="from-top mb-0">Read More</h5>
+                                </figcaption>
+                              </figure>
+                          {% endif %}
+                          <div class="card-body">
+                            <div class="post-header">
+                              <div class="post-category text-line">
+                                <a href="{% url 'category_detail' post.category.slug %}" class="hover" rel="category">{{ post.category }}</a>
+                              </div>
+                              <!-- /.post-category -->
+                              <h2 class="mt-1 mb-0"><a class="post-title" href="{% url 'post_detail' post.category.slug post.slug %}">{{ post.title }}</a></h2>
+                            </div>
+                            <!-- /.post-header -->
+                            <div class="post-content">
+                              <p>{{ post.excerpt }}</p>
+                            </div>
+                            <!-- /.post-content -->
+                          </div>
+                          <!--/.card-body -->
+                          <div class="card-footer">
+                            <ul class="post-meta d-flex mb-0">
+                              <li class="post-date ms-auto"><i class="uil uil-calendar-alt"></i><span>{{ post.created_at|date:'M-d-Y' }}</span></li>
+                            </ul>
+                            <!-- /.post-meta -->
+                          </div>
+                          <!-- /.card-footer -->
+                        </div>
+                        <!-- /.card -->
+                      </article>
+                      <!-- /.post -->
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        {% endfor %}
+
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x align-middle align-center">
+                <div class="image-wrapper bg-auto no-overlay bg-image text-center align-center bg-map" data-image-src="{% static 'assets/images/photos/map.png' %}" >
+                    <div class="grid-x grid-padding-x align-middle align-center">
+                        <div class="cell large-9 padding-horizontal-4 margin-vertical-5">
+                            <h3 class="margin-vertical-3">You can have access to data concerning EV in multiple cities in the UK using this platform.</h3>
+
+                            <div class="d-flex justify-content-center">
+                                <a class="button primary margin-horizontal-1" href="#">About Us</a>
+                                <a class="button secondary margin-horizontal-1" href="#">EV Data</a>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                </div>
+
+            </div>
+        </div>
+
+
+{% endblock %}

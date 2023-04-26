@@ -1,0 +1,102 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %} About {% endblock %}
+
+{% block content %}
+
+        <div class="grid-container full bg-soft-secondary">
+            <div class="grid-x grid-padding-x align-center">
+
+                <div class="cell large-8 text-center padding-top-7 padding-bottom-10">
+                    <h2 class="h2-prime">About</h2>
+                    <p class="color-dark-grey p-prime">Making Data of Electric Vehicles, the benefits of their usage and other related information easy to view, analyze and understand.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="grid-container bg-white">
+            <div class="grid-x grid-padding-x align-center">
+
+                <div class="cell large-8 medium-8 small-8">
+                    <div class="row gx-0 mb-16 mb-mb-20 relative img-state-page ">
+                        <div data-cues data-group="images" data-delay="500">
+                            <img class="img-fluid-page mx-auto" src="{% static 'assets/images/photos/f4.png' %}" data-cue="slideInUp" alt="data-image-1">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="grid-container full bg-soft-secondary">
+            <div class="grid-x grid-padding-x align-center margin-vertical-3 padding-top-5">
+                <div class="container py-14 py-md-16">
+                    <div class="row align-center gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-16" data-cue="slideInUp">
+                        <div class="col-lg-7 mx-auto">
+                                <img class="rounded" src="{% static 'assets/images/photos/vt1.png' %}" alt="data-image-10" />
+                        </div>
+                        <!--/column -->
+                        <div class="col-lg-5">
+                            <h4 class="h4-prime text-line mb-3">What We Did</h4>
+                            <h3 class="display-5 mb-7 pe-xxl-5">The processes employed in the execution of this project were straightfoward </h3>
+                            <div class="d-flex flex-row mb-4">
+                                <div>
+                                    <img src="{% static 'assets/images/icons/lineal/light-bulb.svg' %}" class="svg-inject icon-svg icon-svg-sm text-red me-4" alt="" />
+                                </div>
+                                <div>
+                                    <h4 class="mb1">Collect Ideas</h4>
+                                    <p class="mb-1">Nulla vitae elit libero pharetra augue dapibus.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row mb-4">
+                                <div>
+                                    <img src="{% static 'assets/images/icons/lineal/settings-3.svg' %}" class="svg-inject icon-svg icon-svg-sm text-green me-4" alt="" />
+                                </div>
+                                <div>
+                                    <h4 class="mb1">Develop</h4>
+                                    <p class="mb-1">Nulla vitae elit libero pharetra augue dapibus.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row mb-4">
+                                <div>
+                                    <img src="{% static 'assets/images/icons/lineal/bar-chart.svg' %}" class="svg-inject icon-svg icon-svg-sm text-red me-4" alt="" />
+                                </div>
+                                <div>
+                                    <h4 class="mb1">Data Analysis</h4>
+                                    <p class="mb-1">Nulla vitae elit libero pharetra augue dapibus.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/column -->
+                    </div>
+                    <!--/.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+        </div>
+
+
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x align-middle align-center">
+                <div class="image-wrapper bg-auto no-overlay bg-image text-center align-center bg-map" data-image-src="{% static 'assets/images/photos/map.png' %}" >
+                    <div class="grid-x grid-padding-x align-middle align-center">
+                        <div class="cell large-9 padding-horizontal-4 margin-vertical-5">
+                            <h3 class="margin-vertical-3">You can have access to data concerning EV in multiple cities in the UK using this platform.</h3>
+
+                            <div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons" data-delay="600">
+                                <a class="button primary margin-horizontal-1" href="#">About Us</a>
+                                <a class="button secondary margin-horizontal-1" href="#">EV Data</a>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                </div>
+
+            </div>
+        </div>
+
+{% endblock %}
