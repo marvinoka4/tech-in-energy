@@ -1,0 +1,61 @@
+.icon-nav-item .icon-nav-link {
+  color: get-color(secondary);
+  font-size: $small-font-size;
+}
+.icon-nav-link {
+  color: get-color(secondary);
+  &:hover {
+    color: get-color(primary);
+  }
+}
+.nav-item .nav-link {
+  color: get-color(secondary);
+  font-size: $small-font-size;
+}
+.nav-link {
+  color: get-color(secondary);
+  &:hover {
+    color: get-color(primary);
+  }
+}
+.nav-link a {
+  padding: 0.5rem 0.7rem;
+}
+.nav-link[aria-current="page"] {
+  background: transparent;
+  color: get-color(primary);
+  font-family: $header-font-family;
+}
+.dropdown.menu > li > a {
+  padding: 0.5rem 1.5rem;
+}
+.offcanvas-footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.div-100 {
+  width: 100%;
+}
+.slight-padding {
+  padding: 0.5rem 0;
+}
+$animated-search-form-initial-width: 10rem;
+$animated-search-form-transition-duration: 0.5s;
+.animated-search-form[type=search] {
+  width: $animated-search-form-initial-width;
+  border: 0.125rem solid get-color(light-grey);
+  box-shadow: 0 0 3.125rem rgba(0,0,0, 0.18);
+  border-radius: 50px !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 22a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm6.321-1.096l5.386 5.39a1 1 0 1 1-1.414 1.413l-5.386-5.388a8 8 0 1 1 1.414-1.415z' fill='#ccc' fill-rule='nonzero'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  font-size: $small-font-size;
+  padding: 0.75rem 2.5rem;
+  transition: width $animated-search-form-transition-duration ease-in-out;
+
+  &:focus {
+    width: 100%;
+  }
+}
+
