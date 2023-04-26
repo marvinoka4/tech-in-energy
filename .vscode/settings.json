@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/943a6eb5-cb9b-44d4-a625-1d44e343a1cf/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/tech-in-energy",
+    "appService.deploySubpath": "."
+}
