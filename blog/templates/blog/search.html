@@ -10,7 +10,7 @@
             <div class="grid-x grid-padding-x align-center">
 
                 <div class="cell large-8 text-center padding-vertical-7">
-                    <h2 class="h-prime">Search Results</span> </h2>
+                    <h2 class="h-prime">Search Results</h2>
                     <h4 class="color-dark-grey p-prime">Query: "{{ query }}"</h4>
                 </div>
 
@@ -29,7 +29,7 @@
                           {% if post.image %}
                              <figure class="card-img-top overlay overlay-1 hover-scale">
                                  <a href="{% url 'post_detail' post.category.slug post.slug %}">
-                                     <img class="img-fluid-page mx-auto" src="{{ post.image.url }}" alt="data-image-1">
+                                     <img class="img-fluid-page mx-auto" src="{{ post.image.url }}" alt="{{ post.title }}">
                                  </a>
                             <figcaption>
                               <h5 class="from-top mb-0">Read More</h5>

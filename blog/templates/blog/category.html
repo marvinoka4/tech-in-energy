@@ -27,7 +27,7 @@
                       <article class="post">
                         <div class="card">
                           {% if post.image %}
-                              <figure class="card-img-top overlay overlay-1 hover-scale"><a href="{% url 'post_detail' post.category.slug post.slug %}"><img class="img-fluid-page mx-auto" src="{{ post.image.url }}" alt="data-image-1"></a>
+                              <figure class="card-img-top overlay overlay-1 hover-scale"><a href="{% url 'post_detail' post.category.slug post.slug %}"><img class="img-fluid-page mx-auto" src="{{ post.image.url }}" alt="{{ post.title }}"></a>
                                 <figcaption>
                                   <h5 class="from-top mb-0">Read More</h5>
                                 </figcaption>

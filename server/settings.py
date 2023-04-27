@@ -26,7 +26,6 @@ SECRET_KEY = 'django-insecure-w#n+ogc!i2nab7$+-ui)-52yn$(d9g_u77b**#=v_)4hdceib-
 DEBUG = False
 
 ALLOWED_HOSTS = ['tech-in-energy.azurewebsites.net']
-# ALLOWED_HOSTS = []
 
 # Application definition
 

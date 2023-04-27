@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib import sitemaps
+# from django.contrib import sitemaps
 from django.contrib.sitemaps.views import sitemap
 from django.contrib import admin
 from django.urls import path, include
@@ -36,4 +36,7 @@ urlpatterns = [
                   path('news/', blog, name='blog'),
                   path('', include('blog.urls')),
                   path('', home, name='home'),
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ]
+
+if settings.DEBUG:  # new
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
