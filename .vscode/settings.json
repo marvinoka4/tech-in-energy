@@ -1,13 +1,19 @@
 {
-    "folders": [
-        {
-         "path": "."
-        }
-       ],
-       "settings": {
-        "python.terminal.activateEnvInCurrentTerminal": true,
-        "python.defaultInterpreterPath": "/Users/Marvin/Documents/_Work/_Vintersect/Portfolio/tech-in-energy/server/venv/scripts/activate"
+    "python.pythonPath": "venv\\Scripts\\python.exe",
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "none",
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "files.associations": {
+      "**/*.html": "html",
+      "**/templates/**/*.html": "django-html",
+      "**/templates/**/*": "django-txt",
+      "**/requirements{/**,*}.{txt,in}": "pip-requirements"
     },
     "appService.defaultWebAppToDeploy": "undefined/subscriptions/943a6eb5-cb9b-44d4-a625-1d44e343a1cf/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/tech-in-energy",
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": ".",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.analysis.typeCheckingMode": "basic"
 }

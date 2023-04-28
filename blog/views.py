@@ -9,7 +9,7 @@ from .models import Post, Category
 def detail(request, category_slug, slug):
     post = get_object_or_404(Post, slug=slug, status=Post.ACTIVE)
 
-    if request.method == 'POST':
+    if request.method == "POST":
         form = CommentForm(request.POST)
 
         if form.is_valid():
@@ -17,24 +17,28 @@ def detail(request, category_slug, slug):
             comment.post = post
             comment.save()
 
-            return redirect('post_detail', slug=slug)
+            return redirect("post_detail", slug=slug)
         else:
             form = CommentForm()
     else:
         form = CommentForm()
 
-    return render(request, 'blog/detail.html', {'post': post, 'form': form})
+    return render(request, "blog/detail.html", {"post": post, "form": form})
 
 
 def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
-    posts = category.posts.filter(status=Post.ACTIVE)
+    posts = category.posts.filter(status=Post.ACTIVE)  # type: ignore
 
-    return render(request, 'blog/category.html', {'category': category, 'posts': posts})
+    return render(request, "blog/category.html", {"category": category, "posts": posts})
 
 
 def search(request):
-    query = request.GET.get('query', '')
-    posts = Post.objects.filter(status=Post.ACTIVE).filter(Q(title__icontains=query) | Q(excerpt__icontains=query) | Q(body__icontains=query))
+    query = request.GET.get("query", "")
+    posts = Post.objects.filter(status=Post.ACTIVE).filter(
+        Q(title__icontains=query)
+        | Q(excerpt__icontains=query)
+        | Q(body__icontains=query)
+    )
 
-    return render(request, 'blog/search.html', {'posts': posts, 'query': query})
+    return render(request, "blog/search.html", {"posts": posts, "query": query})
