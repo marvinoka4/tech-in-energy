@@ -19,11 +19,7 @@
 <body>
     <div class="off-canvas-wrapper">
 
-        <nav class="off-canvas position-right text-white text-center padding-top-4" id="off-canvas" data-off-canvas>
-            <!-- Close button -->
-            <button class="close-button" aria-label="Close menu" type="button" data-close>
-                <span aria-hidden="true"><img width="30" src="{% static 'assets/images/fa/close-icon.svg' %}" alt="close"></span>
-            </button>
+        <nav class="off-canvas position-right text-white text-center padding-top-2" id="off-canvas" data-off-canvas>
             <div class="cell large-4 medium-6  small-6 padding-bottom-2">
                 <a href="/" >
                     <img src="{% static 'assets/images/util/tie-logo.svg' %}" width="150" alt="tie-logo"/>
@@ -52,7 +48,6 @@
 
         <div class="off-canvas-content" data-off-canvas-content>
 
-
             <div class="grid-container full">
                 <div data-sticky-container>
                     <div class="div-100" data-sticky data-options="marginTop:0;">
@@ -65,15 +60,16 @@
                                             <img src="{% static 'assets/images/util/tie-logo.svg' %}" width="70" alt="tie-logo"/>
                                         </a>
                                     </div>
-                                    <div class="cell large-6 medium-6  small-6 flex-container align-center">
+                                    <div class="cell large-6 medium-6 small-6 flex-container align-center">
                                         <ul class="dropdown menu show-for-large">
                                             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                                             <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
                                              <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">News</a></li>
                                             <li class="nav-item"><a class="nav-link" href="{% url 'data' %}">Data</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="admin/">Admin</a></li>
                                         </ul>
                                     </div>
-                                    <div class="cell large-3 medium-3  small-3 flex-container align-center align-middle">
+                                    <div class="cell large-3 medium-3 small-3 flex-container align-center align-middle">
                                         <ul class=" menu show-for-large">
                                             <li class="icon-nav-item">
                                                 <form method="get" action="{% url 'search' %}">
@@ -84,7 +80,7 @@
                                             </li>
                                         </ul>
                                         <div>
-                                            <button class="hamburger hamburger--slider hide-for-large" type="button" data-toggle="off-canvas">
+                                            <button class="hamburger hamburger--collapse hide-for-large" id="hamburger-menu" type="button" data-toggle="off-canvas">
                                             <span class="hamburger-box">
                                             <span class="hamburger-inner"></span>
                                             </span>
@@ -126,7 +122,7 @@
         </div>
     </div>
 
-    <script src="{% static 'assets/scripts/scripts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/scripts/scripts.js' %}"></script>
 
 </body>
 </html>

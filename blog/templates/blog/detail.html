@@ -26,8 +26,21 @@
 
         <div class="grid-container bg-white">
             <div class="grid-x grid-padding-x align-center">
-                <div class="cell large-9 medium-9 small-9 padding-vertical-3">
-                    <div class="row gx-0 mb-16 mb-mb-20 relative img-state-page classic-view">
+                <div class="cell large-3 medium-3 show-for-medium padding-vertical-3">
+                    <div data-sticky-container>
+                      <div class="the-post-content-menu padding-vertical-3" data-sticky data-anchor="the-post-content" id="the-post-content-menu">
+                          <ul class="menu vertical expanded" data-magellan data-smooth-scroll>
+                            <li><h4>On this page:</h4></li>
+                            <li><a href="#post-introduction">{{ post.introduction_title }}</a></li>
+                            <li><a href="#post-body">{{ post.body_title }}</a></li>
+                            <li><a href="#post-conclusion">{{ post.conclusion_title }}</a></li>
+                          </ul>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="cell large-9 medium-9 small-12 padding-vertical-3" id="the-post-content">
+                    <div class="row gx-0 mb-mb-20 relative img-state-page classic-view">
 
                       <article class="post">
                         <div class="card">
@@ -38,12 +51,24 @@
                           {% endif %}
                           <div class="card-body">
                             <div class="post-content padding-vertical-1">
-                              <p>{{ post.introduction }}</p>
-                              <p>{{ post.body }}</p>
-                                <blockquote class="p-prime my-8">
-                                  <p><strong>{{ post.excerpt }}</strong></p>
-                                </blockquote>
-                              <p>{{ post.conclusion }}</p>
+                                <div class="sections">
+                                    <section id="post-introduction" data-magellan-target="introduction">
+                                      <h2 class="padding-top-2">{{ post.introduction_title }}</h2>
+                                      <p>{{ post.introduction }}</p>
+                                    </section>
+                                    <section id="post-body" data-magellan-target="body">
+                                      <h2 class="padding-top-2">{{ post.body_title }}</h2>
+                                      <p>{{ post.body }}</p>
+                                    </section>
+                                    <blockquote class="p-prime my-8">
+                                      <p><strong>{{ post.excerpt }}</strong></p>
+                                    </blockquote>
+                                    <section id="post-conclusion" data-magellan-target="conclusion">
+                                      <h2 class="padding-top-2">{{ post.conclusion_title }}</h2>
+                                      <p>{{ post.conclusion }}</p>
+                                    </section>
+
+                                </div>
 
                                 <hr class="padding-vertical-1" />
 {#                                {% if not post.comments.all %}#}
@@ -120,8 +145,8 @@
                             <h3 class="margin-vertical-3">You can have access to data concerning EV in multiple cities in the UK using this platform.</h3>
 
                             <div class="d-flex justify-content-center">
-                                <a class="button primary margin-horizontal-1" href="#">About Us</a>
-                                <a class="button secondary margin-horizontal-1" href="#">EV Data</a>
+                                <a class="button secondary margin-horizontal-1" href="/">Home</a>
+                                <a class="button primary margin-horizontal-1" href="{% url 'blog' %}">News</a>
                             </div>
                         </div>
                         <!-- /.row -->
@@ -131,7 +156,6 @@
 
             </div>
         </div>
-
 
 
 

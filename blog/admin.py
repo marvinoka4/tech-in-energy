@@ -9,7 +9,7 @@ class CommentItemInline(admin.TabularInline):
 
 
 class PostAdmin(admin.ModelAdmin):
-    search_fields = ['title', 'excerpt', 'introduction', 'body', 'conclusion']
+    search_fields = ['title', 'excerpt', 'introduction_title', 'introduction', 'body_title', 'body', 'conclusion_title', 'conclusion']
     list_display = ['title', 'slug', 'status', 'category', 'created_at']
     list_filter = ['category', 'created_at', 'status']
     inlines = [CommentItemInline]
